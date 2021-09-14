@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="titleDateTime"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="32dp"
+            android:text="@{titleDateTime}"
+            android:textColor="@color/mine_shaft"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="December, 2021" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tvDateTime"
+            tools:listitem="@layout/item_date_picker" />
+
+        <View
+            android:id="@+id/showDatePicker"
+            android:elevation="18dp"
+            android:translationZ="8dp"
+            android:layout_width="28dp"
+            android:layout_marginEnd="28dp"
+            android:layout_height="32dp"
+            android:backgroundTint="@color/green_haze"
+            android:background="@drawable/ic_baseline_calendar"
+            android:text="Hello World!"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDateTime"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvDateTime" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
